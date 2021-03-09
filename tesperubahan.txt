@@ -1,0 +1,95 @@
+#include <stdio.h>
+#include <math.h>
+float tambah(float a, float b)
+{
+    return(a+b);
+}
+
+float kurang(float a, float b)
+{
+    return(a-b);
+}
+
+float kali(float a, float b)
+{
+    return(a*b);
+}
+
+float bagi(float a, float b)
+{
+    return(a/b);
+}
+
+float pangkat(float a, float b, int z, float total)
+{
+    for (z=1;z<=b;z++)
+    {
+        total = total*a;
+    }
+    return(total);
+}
+
+float integral (float a, float b, int z,float x,int n, float y, float total)
+{
+ printf("Masukkan jumlah interval : ");
+        scanf("%d",&n);
+        x=((a-b)/(2*n));
+        total =0;
+    for (z=b+1;z<a;z++)
+    {
+        total = total+(x*z*z*2);
+    }
+    total = total +(x*b*b) + (x*a*a);
+    printf("%.2f",total);
+    return (total);
+}
+
+
+
+int main ()
+{
+     float a,b,result=0,total=1,c,y;
+     char operator;
+     int z,n,x;
+
+     printf ("\n Masukkan operator (+,-,*,/,^,~) : ");
+     scanf ("%c",&operator);
+
+     printf("\n Masukkan angka pertama/angka dasar(bila memilih pangkat)/batas atas (bila memilih integral): ");
+     scanf ("%f", &a);
+
+     printf("\n Masukkan angka kedua/besar pangkat(bila memilih pangkat)/batas bawah (bila memilih integral) : ");
+     scanf ("%f",&b);
+
+
+    if (operator == '+')
+    {
+        result = tambah(a,b);
+    }
+    else if (operator == '-')
+    {
+        result = kurang(a,b);
+    }
+    else if (operator == '*')
+    {
+        result = kali(a,b);
+    }
+    else if (operator == '/')
+    {
+        result = bagi(a,b);
+    }
+    else if (operator == '^')
+    {
+        result = pangkat(a,b,z,total);
+    }
+    else if (operator == '~')
+    {
+
+        result = integral(a,b,z,x,n,y,total);
+    }
+printf("\n hasilnya : %.2f",result);
+return 0;
+}
+tes
+tes
+tes
